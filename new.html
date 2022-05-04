@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    class App extends React.Component {
+        constructor () {
+            super();
+            this.state={
+                color:'blue',
+                ans:'Smaller / Greater',
+                font:'20px'
+            };
+            console.log(this,"Constructor")
+        }
+
+        fn= () => {
+            console.log(this,"fn");
+            let num=this.refs.num.value;
+            if (num > 100)
+                this.setState({ans:'Greater than 100', color:'red', font:'30px' })
+            else    
+                this.setState({ans:'Smaller than 100', color:'purple', font:'12px' })
+            
+        }
+
+        render= ()=> {
+            // console.log(this,'render');
+            return (
+                <div>
+                    <b>Number: </b>
+                    <input ref="num" />
+                    <button onClick={this.fn}>Click </button>
+                    <h1 style={{color:this.state.color,fontSize:this.state.font}}>Ans : {this.state.ans}</h1>
+                </div>
+            );
+        }
+    }
+
+
+    const root=ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+
+    </script>
+</body>
+</html>

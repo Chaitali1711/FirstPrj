@@ -1,0 +1,91 @@
+<!doctype html>
+<html dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="script.js"></script>
+</head>
+
+<body>
+hello Git demo
+</body>
+</html>
+
+
+    <div id="root"> </div>
+88
+
+    <div id="main" class="mainclass"> </div>  
+    <div id="name">   </div>      
+    <div id="heading5"></div>
+    <div id="props"> </div>
+
+
+<script type="text/babel">
+    // const h5='<h2>It is '+new Date().toLocaleTimeString();' </h2>';
+    const h5='<h3>Tryting heading 3 </h3>';
+    document.getElementById('heading5').innerHTML=h5;
+
+        const One=()=> <h1>Welcome..</h1>;
+    const Two=()=>{
+        return <div>
+            <One/>
+            <h5>This is heading five</h5>
+            </div>;
+    }
+
+    // ReactDOM.render(<Two />, document.querySelector('.mainclass'));
+
+    const root = ReactDOM.createRoot(document.getElementById('main'));
+root.render(<Two />)
+
+const name = 'Josh Perez';
+const Element = ()=> <h1>Hello, {name}</h1>;
+
+
+const root2=ReactDOM.createRoot(document.getElementById('name'));
+root2.render(<Element />);
+
+const Properties=({name,location,job})=>{
+    return (
+        <div>
+            <h1>My name is {name} and I am from {location} I am working as {job}</h1>
+        </div>
+    )
+}
+const PropThis=()=>{
+        return (
+            <div>
+                <Properties  name="SkillQode" location="Surat" job="Education"  />
+                <Properties  name="Hello" location="World"  job="Greetings" />
+            </div>
+        );
+
+}
+   const root3=ReactDOM.createRoot(document.getElementById('props'));
+   root3.render(<PropThis/>);
+
+
+
+   const root4 = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  root4.render(element);
+}
+
+setInterval(tick, 1000);
+
+</script> 
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chage color by react</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="scriptclrchange.js"></script>
+</head>
+<body>
+    <div id="root"> </div>
+<!-- 
+    <script type="text/babel">
+        class App extends React.Component {
+            constructor () {
+                super();
+                this.name = "a";
+                this.state = {
+                    ans:'give input first',
+                    color:"red"
+                };
+                // console.log(this,"Constructor");
+            }
+
+        fn = () => {
+            let n1 = this.refs.n1.value;
+            // console.log(this,"fn")
+
+            if (n1 % 2==0)
+                this.setState({ans:'Even Number',color:"blue"});
+
+            else
+                this.setState({ans:'Odd Number',color:"green"});
+            
+        }
+
+        render =() => {
+            // debugger;
+            console.log(this, "render");
+            
+            return (<div>
+                <b>Your number</b>
+                <input ref="n1" />
+                <br />   <br />
+                <button onClick={this.fn}>Click </button>
+                <h1 style={{color:this.state.color}}>Ans:{this.state.ans} </h1>
+                </div>
+            );
+            
+        }
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+
+
+
+    </script> -->
+</body>
+</html>

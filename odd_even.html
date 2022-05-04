@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OddEven number by react</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"> </div>
+
+    <div id="ans"></div>
+
+
+    <script type="text/babel">
+        class App extends React.Component {
+            constructor() {
+            super();
+            this.name = "a";
+            this.state = {
+                ans:'give input first'
+            };
+            console.log(this,"Constructor");
+        }
+
+        fn = () => {
+            let n1 = this.refs.n1.value;
+            // console.log(this,"fn")
+
+            if (n1 % 2==0)
+                // document.getElementById('ans').innerHTML='Even Number';
+                this.setState({ans:'Even Number'});
+
+            else
+                // document.getElementById('ans').innerHTML='Odd Number';
+                this.setState({ans:'Odd Number'});
+        
+            };
+
+        render() {
+            // debugger;
+            console.log(this, "render");
+            
+            return <div>
+                <b>Your number</b>
+                <input ref="n1" />
+                <br />              <br />
+                <button onClick={this.fn}>Click </button>
+                <h1>Ans:{this.state.ans}</h1>
+                </div>
+            
+            
+        }
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+
+
+
+    </script>
+
+</body>
+</html>

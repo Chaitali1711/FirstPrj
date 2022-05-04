@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+
+
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class One extends React.Component{
+            render() {
+                console.log("One: ",this)
+                const v_one= 'Hello1';
+                return (
+                    <div>
+                    <Two o={v_one}  v="hello_random"/>  
+                    <Three p={v_one}  q="hello_there"/>  
+
+                    </div>
+                );
+            }
+        }
+
+        class Two extends React.Component{
+            render(){
+                console.log("Two: ",this)
+                const two='Hello2'
+                const Vnew='Hello_new'
+                return (
+                    <div>
+                    <h1>This is class Two: {this.props.o} and {this.props.v}</h1>
+                    <hr/>
+                    <Three t={Vnew} />
+                    </div>
+                );
+            }
+        }
+        class Three extends React.Component{
+            render() {
+                console.log("three",this);
+                const thr='Hello3';
+                return (
+                    <div>
+                    <h1> This is Class three calling v_one from ClassOne {this.props.p} and {this.props.q}</h1> 
+                    <h1> This is Class three calling var_new from ClassTwo {this.props.t}</h1>
+                    <hr />
+                    </div>
+                );
+            }
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<One />);
+
+    </script>
+
+</body>
+</html>
